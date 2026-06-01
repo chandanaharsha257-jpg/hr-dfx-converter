@@ -184,7 +184,7 @@ async def export_canvas_to_dxf(payload: ExportPayload):
         path  = os.path.join(OUTPUT_DIR, fname)
         doc.saveas(path)
         return {"status": "success",
-                "download_url": f"http://127.0.0.1:8000/download-export/{fname}"}
+                "download_url": f"https://lavish-creativity-production-c53a.up.railway.app/download-export/{fname}"}
     except Exception as e:
         raise HTTPException(500, str(e))
 
@@ -216,7 +216,7 @@ async def pdf_to_dxf(file: UploadFile = File(...)):
 
         if os.path.exists(pdf_path): os.remove(pdf_path)
         return {"status": "success",
-                "download_url": f"http://127.0.0.1:8000/download-export/{dxf_name}"}
+                "download_url": f"https://lavish-creativity-production-c53a.up.railway.app/download-export/{dxf_name}"}
     except Exception as e:
         if os.path.exists(pdf_path): os.remove(pdf_path)
         raise HTTPException(500, str(e))
@@ -253,7 +253,7 @@ async def pdf_to_dxf_full(file: UploadFile = File(...)):
 
         if os.path.exists(pdf_path): os.remove(pdf_path)
         return {"status": "success",
-                "download_url": f"http://127.0.0.1:8000/download-export/{dxf_name}"}
+                "download_url": f"https://lavish-creativity-production-c53a.up.railway.app/download-export/{dxf_name}"}
     except Exception as e:
         if os.path.exists(pdf_path): os.remove(pdf_path)
         raise HTTPException(500, str(e))
@@ -280,7 +280,7 @@ async def pdf_to_image(file: UploadFile = File(...)):
         doc.close()
         if os.path.exists(pdf_path): os.remove(pdf_path)
         return {"status": "success", "width_px": pix.width, "height_px": pix.height,
-                "download_url": f"http://127.0.0.1:8000/download-export/{png_name}"}
+                "download_url": f"https://lavish-creativity-production-c53a.up.railway.app/download-export/{png_name}"}
     except Exception as e:
         if os.path.exists(pdf_path): os.remove(pdf_path)
         raise HTTPException(500, str(e))
