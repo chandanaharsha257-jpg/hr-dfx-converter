@@ -140,7 +140,7 @@ canvas        { background:var(--canvas-bg)!important; }
 <canvas id="canvas"></canvas>
 
 <script>
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://lavish-creativity-production-c53a.up.railway.app";
 
 const canvas = document.getElementById("canvas");
 const ctx    = canvas.getContext("2d");
